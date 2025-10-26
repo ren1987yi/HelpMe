@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://5ekju1gnphp7"]
+[gd_scene load_steps=5 format=3 uid="uid://5ekju1gnphp7"]
 
 [ext_resource type="Script" uid="uid://d0ugsiv1b4wuj" path="res://characters/player/PlayerV1.cs" id="1_50e71"]
-[ext_resource type="Texture2D" uid="uid://btoh38c2nsx3" path="res://assets/images/p1.jpeg" id="1_mn7vb"]
+[ext_resource type="Texture2D" uid="uid://b0ig0kyrw4dls" path="res://assets/images/lucas_2.png" id="2_50e71"]
+[ext_resource type="PackedScene" uid="uid://bbl7yppx7krd7" path="res://weapon/pen.tscn" id="3_krsnw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_trr8p"]
-radius = 32.0
+radius = 64.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_50e71")
@@ -13,5 +14,16 @@ script = ExtResource("1_50e71")
 shape = SubResource("CircleShape2D_trr8p")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.16153845, 0.16153845)
-texture = ExtResource("1_mn7vb")
+position = Vector2(1.9073486e-06, 1.9073486e-06)
+scale = Vector2(0.2782568, 0.2782568)
+texture = ExtResource("2_50e71")
+region_enabled = true
+region_rect = Rect2(111.927246, 43.635803, 279.64313, 332.27023)
+
+[node name="Pen1" parent="." instance=ExtResource("3_krsnw")]
+position = Vector2(50, -44)
+scale = Vector2(0.5, 0.5)
+
+[node name="Pen2" parent="." instance=ExtResource("3_krsnw")]
+position = Vector2(64, 0)
+scale = Vector2(0.5, 0.5)

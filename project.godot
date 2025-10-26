@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="HelpMe"
-run/main_scene="uid://3ir1q0bhfaoi"
+run/main_scene="uid://b30vrdhd25bpk"
 config/features=PackedStringArray("4.5", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+BattleSystem="*res://service/BattleService.cs"
 
 [display]
 

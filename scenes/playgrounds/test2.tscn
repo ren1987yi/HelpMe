@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://b30vrdhd25bpk"]
+
+[ext_resource type="PackedScene" uid="uid://3ir1q0bhfaoi" path="res://scenes/playgrounds/test1.tscn" id="1_te84t"]
+
+[node name="Test2" type="Node"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "fghj
+"
+
+[node name="Root" parent="." instance=ExtResource("1_te84t")]

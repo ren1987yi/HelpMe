@@ -4,8 +4,14 @@ using System;
 public partial class PlayerV1 : CharacterBody2D
 {
 
+    [Export]
+    public float Size { get; set; } = 64;
+
+
+
+
     float speed = 5.0f;
-    float size = 32;
+
 
     float max_x = 1280;
     float max_y = 800;
@@ -36,25 +42,25 @@ public partial class PlayerV1 : CharacterBody2D
 
 
         curPosion += offset * (float)speed;
-        if(curPosion.X - size < 0)
+        if(curPosion.X - Size < 0)
         {
-            curPosion.X = size;
+            curPosion.X = Size;
         }
 
-        if(curPosion.X + size > max_x)
+        if(curPosion.X + Size > max_x)
         {
-            curPosion.X = max_x - size;
+            curPosion.X = max_x - Size;
         }
 
-        if(curPosion.Y - size < 0)
+        if(curPosion.Y - Size < 0)
         {
-            curPosion.Y = size;
+            curPosion.Y = Size;
 
         }
 
-        if(curPosion.Y + size > max_y)
+        if(curPosion.Y + Size > max_y)
         {
-            curPosion.Y = max_y - size;
+            curPosion.Y = max_y - Size;
         }
 
         

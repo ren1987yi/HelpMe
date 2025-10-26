@@ -4,12 +4,16 @@
 [ext_resource type="Texture2D" uid="uid://bl00pb4yakoe7" path="res://assets/images/bullet1.png" id="1_sbt1s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_54c8o"]
-size = Vector2(2, 2)
+size = Vector2(6, 6)
 
 [node name="Root" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_54c8o")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.7881393e-07, 0)
+scale = Vector2(3, 3)
 texture = ExtResource("1_sbt1s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
