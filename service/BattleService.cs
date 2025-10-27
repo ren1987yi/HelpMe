@@ -8,4 +8,8 @@ public partial class BattleService : Node
        
                GD.Print("BattleService AA");
     }
+
+
+
+
 }

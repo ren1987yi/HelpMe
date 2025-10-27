@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://ha08nr1sn8wf"]
+
+[ext_resource type="Script" uid="uid://docifoqxbmvhm" path="res://weapon/RemoteWeaponBase.cs" id="1_svolx"]
+
+[node name="WeaponBase" type="Node2D"]
+script = ExtResource("1_svolx")
+
+[node name="CrossFire" type="Marker2D" parent="."]
+
+[node name="Img" type="Sprite2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]

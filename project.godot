@@ -17,6 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+WeaponRepository="*res://service/WeaponRepository.cs"
+BulletRepository="*res://service/BulletRepository.cs"
 BattleSystem="*res://service/BattleService.cs"
 
 [display]

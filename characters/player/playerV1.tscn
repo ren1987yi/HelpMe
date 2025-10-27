@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://5ekju1gnphp7"]
+[gd_scene load_steps=6 format=3 uid="uid://5ekju1gnphp7"]
 
 [ext_resource type="Script" uid="uid://d0ugsiv1b4wuj" path="res://characters/player/PlayerV1.cs" id="1_50e71"]
 [ext_resource type="Texture2D" uid="uid://b0ig0kyrw4dls" path="res://assets/images/lucas_2.png" id="2_50e71"]
 [ext_resource type="PackedScene" uid="uid://bbl7yppx7krd7" path="res://weapon/pen.tscn" id="3_krsnw"]
+[ext_resource type="PackedScene" uid="uid://ha08nr1sn8wf" path="res://weapon/RemoteWeaponBase.tscn" id="4_nwgaa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_trr8p"]
 radius = 64.0
@@ -27,3 +28,8 @@ scale = Vector2(0.5, 0.5)
 [node name="Pen2" parent="." instance=ExtResource("3_krsnw")]
 position = Vector2(64, 0)
 scale = Vector2(0.5, 0.5)
+
+[node name="WeaponBase" parent="." instance=ExtResource("4_nwgaa")]
+position = Vector2(42, 48)
+BulletNodePath = "res://bullets/bulletV1.tscn"
+CoolDownTime = 1.0
