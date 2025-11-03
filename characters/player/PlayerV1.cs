@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 
 public partial class PlayerV1 : CharacterBody2D
 {
@@ -7,14 +8,38 @@ public partial class PlayerV1 : CharacterBody2D
     [Export]
     public float Size { get; set; } = 64;
 
+    [Export]
+    public int HP { get; set; } = 100;
 
-
+    
 
     float speed = 5.0f;
 
 
     float max_x = 1280;
     float max_y = 800;
+
+    Sprite2D Normal, Hurt;
+    Sprite2D Sprite;
+
+    Dictionary<string, Texture2D> animations = new Dictionary<string, Texture2D>()
+    {
+        { "Normal", GD.Load<Texture2D>("res://assets/images/lucas_2.png")},
+        {"Hurt", GD.Load<Texture2D>("res://assets/images/hurt1.png")},
+    };
+    public override void _Ready()
+    {
+        Sprite = GetNode<Sprite2D>("Normal");
+        
+        //Sprite.Texture = animations["Normal"];
+
+        Normal = GetNode<Sprite2D>("Normal");
+        Hurt = GetNode<Sprite2D>("Hurt");
+        Normal.Visible = true;
+        Hurt.Visible = false;
+    }
+
+
     public override void _PhysicsProcess(double delta)
     {
         
@@ -70,4 +95,19 @@ public partial class PlayerV1 : CharacterBody2D
         
 
     }
+
+
+    public void OnHurt()
+    {
+        Hurt.Visible = true;
+        Normal.Visible = false;
+        //Sprite.Texture = animations["Hurt"];
+        GetTree().CreateTimer(0.5).Timeout += () =>
+        {
+            Hurt.Visible = false;
+            Normal.Visible = true;
+            //Sprite.Texture = animations["Normal"];
+        };
+    }
+
 }

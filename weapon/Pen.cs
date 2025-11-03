@@ -34,7 +34,7 @@ public partial class Pen : Node2D
     private void OnTimerTimeout()
     {
         Shoot();
-        GetNode<BattleService>("/root/BattleSystem").AA();
+        //GetNode<BattleService>("/root/BattleSystem").AA();
         //var bettleSystem = GetTree().Root.GetNodeOrNull<BattleService>("BattleService");
         //if (bettleSystem != null)
         //{

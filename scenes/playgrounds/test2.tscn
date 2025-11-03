@@ -1,22 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://b30vrdhd25bpk"]
+[gd_scene load_steps=3 format=3 uid="uid://b30vrdhd25bpk"]
 
 [ext_resource type="PackedScene" uid="uid://3ir1q0bhfaoi" path="res://scenes/playgrounds/test1.tscn" id="1_te84t"]
+[ext_resource type="Script" uid="uid://i7s8rwwfe7mm" path="res://scenes/playgrounds/hud_ui.cs" id="2_c8l0s"]
 
 [node name="Test2" type="Node"]
 
-[node name="Control" type="Control" parent="."]
+[node name="Root" parent="." instance=ExtResource("1_te84t")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+script = ExtResource("2_c8l0s")
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Control"]
+[node name="lbPlayerHP" type="Label" parent="CanvasLayer/Control"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "fghj
 "
-
-[node name="Root" parent="." instance=ExtResource("1_te84t")]

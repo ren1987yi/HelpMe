@@ -20,6 +20,9 @@ namespace HelpMe.Core
         public int CurrentEXP {  get; set; }
 
 
+        public List<Weapon> Weapons { get; set; }
+
+        //主属性
         public PersonProperty1 PropertyMain { get; set; }
 
     }

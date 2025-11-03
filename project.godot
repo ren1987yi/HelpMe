@@ -11,15 +11,9 @@ config_version=5
 [application]
 
 config/name="HelpMe"
-run/main_scene="uid://b30vrdhd25bpk"
+run/main_scene="uid://b7lqx7v5j3tw3"
 config/features=PackedStringArray("4.5", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
-
-[autoload]
-
-WeaponRepository="*res://service/WeaponRepository.cs"
-BulletRepository="*res://service/BulletRepository.cs"
-BattleSystem="*res://service/BattleService.cs"
 
 [display]
 

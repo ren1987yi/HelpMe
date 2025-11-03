@@ -1,4 +1,4 @@
-using System.Numerics;
+using Godot;
 
 namespace HelpMe.Core
 {
@@ -16,13 +16,15 @@ namespace HelpMe.Core
 
 
         public WeaponVisual Visual { get; set; }
-       
+
     }
 
     internal class WeaponVisual
     {
         public string Path { get; set; }
         public float Scale { get; set; }
-        public Vector2 Position { get; set; }
+        public Godot.Vector2 Position { get; set; }
+
+        public PackedScene Scene { get; set; }
     }
 }
