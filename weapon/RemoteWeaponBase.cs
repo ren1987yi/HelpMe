@@ -57,6 +57,13 @@ public partial class RemoteWeaponBase : Node2D
         Timer.Start();
     }
 
+    public override void _ExitTree()
+    {
+        //base._ExitTree();
+        Timer.Timeout -= Timer_Timeout;
+        Timer.Stop();
+    }
+
     private void Timer_Timeout()
     {
         //throw new NotImplementedException();
@@ -76,7 +83,7 @@ public partial class RemoteWeaponBase : Node2D
 
         var bullet = bulletScene.Instantiate() as BulletV1;
         //bullet.Direction = new Vector2((float)(random.NextDouble() * 2 - 1), (float)(random.NextDouble() * 2 - 1)).Normalized();
-        bullet.Direction = new Vector2(10,0).Normalized();
+        bullet.Direction = new Vector2(10, (random.NextSingle()-0.5f)).Normalized();
         bullet.Position = CrossFire.GlobalPosition;
         bullet.Producer = this;
         bullet.Speed = 1000f;

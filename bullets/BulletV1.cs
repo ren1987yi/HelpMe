@@ -29,7 +29,11 @@ public partial class BulletV1 : CharacterBody2D
 
         GetTree().CreateTimer(5.0).Timeout += () =>
         {
-            this.QueueFree();
+            if (this.IsInsideTree())
+            {
+
+                this.QueueFree();
+            }
         };
     }
 

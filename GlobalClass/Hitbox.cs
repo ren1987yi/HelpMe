@@ -55,7 +55,12 @@ public partial class Hitbox : Area2D
 
             if(Producer is RemoteWeaponBase)
             {
-                this.GetParent().QueueFree();
+                var p = this.GetParent();
+                if(p != null)
+                {
+
+                    p.QueueFree();
+                }
             }
 
 

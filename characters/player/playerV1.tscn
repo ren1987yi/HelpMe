@@ -12,7 +12,7 @@ radius = 41.01219
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_50e71")
-HP = 10
+HP = 3
 
 [node name="Normal" type="Sprite2D" parent="."]
 position = Vector2(1.9073486e-06, 1.9073486e-06)
@@ -31,7 +31,7 @@ texture = ExtResource("3_d01cg")
 [node name="Weapon1" parent="." instance=ExtResource("4_nwgaa")]
 position = Vector2(60, 0)
 BulletNodePath = "res://bullets/bulletV1.tscn"
-CoolDownTime = 1000000.0
+CoolDownTime = 0.1
 
 [node name="CrossFire" parent="Weapon1" index="0"]
 position = Vector2(23, -8)
@@ -42,7 +42,6 @@ scale = Vector2(0.05, 0.05)
 texture = ExtResource("5_d01cg")
 
 [node name="Hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("Producer")]
-visible = false
 collision_layer = 4
 collision_mask = 4
 script = ExtResource("6_d01cg")
@@ -52,7 +51,32 @@ metadata/_custom_type_script = "uid://ckwhrsmhqd7et"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 shape = SubResource("CircleShape2D_pv6e2")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.2, 1.2)
+[node name="Weapon2" parent="." instance=ExtResource("4_nwgaa")]
+position = Vector2(61, 44)
+BulletNodePath = "res://bullets/bulletV1.tscn"
+CoolDownTime = 0.1
+
+[node name="CrossFire" parent="Weapon2" index="0"]
+position = Vector2(23, -8)
+
+[node name="Sprite2D" type="Sprite2D" parent="Weapon2"]
+position = Vector2(0, -3.8146973e-06)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("5_d01cg")
+
+[node name="Weapon3" parent="." instance=ExtResource("4_nwgaa")]
+position = Vector2(60, -48)
+BulletNodePath = "res://bullets/bulletV1.tscn"
+CoolDownTime = 0.1
+
+[node name="CrossFire" parent="Weapon3" index="0"]
+position = Vector2(23, -8)
+
+[node name="Sprite2D" type="Sprite2D" parent="Weapon3"]
+position = Vector2(0, -3.8146973e-06)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("5_d01cg")
 
 [editable path="Weapon1"]
+[editable path="Weapon2"]
+[editable path="Weapon3"]

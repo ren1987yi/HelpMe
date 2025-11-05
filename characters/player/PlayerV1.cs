@@ -102,12 +102,16 @@ public partial class PlayerV1 : CharacterBody2D
         Hurt.Visible = true;
         Normal.Visible = false;
         //Sprite.Texture = animations["Hurt"];
-        GetTree().CreateTimer(0.5).Timeout += () =>
+        if (this.IsInsideTree())
         {
-            Hurt.Visible = false;
-            Normal.Visible = true;
-            //Sprite.Texture = animations["Normal"];
-        };
+
+            GetTree().CreateTimer(0.5).Timeout += () =>
+            {
+                Hurt.Visible = false;
+                Normal.Visible = true;
+                //Sprite.Texture = animations["Normal"];
+            };
+        }
     }
 
 }

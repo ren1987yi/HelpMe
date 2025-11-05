@@ -1,23 +1,25 @@
-[gd_scene load_steps=6 format=3 uid="uid://dgd4ccvwdlw7a"]
+[gd_scene load_steps=7 format=3 uid="uid://dgd4ccvwdlw7a"]
 
 [ext_resource type="Script" uid="uid://cw8qhorbsvkvr" path="res://characters/enemy/Enemy1.cs" id="1_fim0o"]
-[ext_resource type="Texture2D" uid="uid://btoh38c2nsx3" path="res://assets/images/p1.jpeg" id="1_n8k1t"]
 [ext_resource type="Script" uid="uid://d2q1y3cu1t74m" path="res://GlobalClass/Hitbox.cs" id="2_dq1lt"]
+[ext_resource type="Texture2D" uid="uid://bd3yacyyaqdqo" path="res://assets/images/p1.png" id="2_fim0o"]
 [ext_resource type="Script" uid="uid://ckwhrsmhqd7et" path="res://GlobalClass/Hurtbox.cs" id="3_gua3a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gua3a"]
-size = Vector2(260, 259)
+size = Vector2(118, 169)
 
-[node name="Enemy1" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_8uxmv"]
+radius = 37.0
+
+[node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_fim0o")
-HP = 10.0
+HP = 30.0
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-texture = ExtResource("1_n8k1t")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_fim0o")
 
 [node name="Hitbox" type="Area2D" parent="." node_paths=PackedStringArray("Producer")]
+visible = false
 collision_layer = 4
 collision_mask = 4
 script = ExtResource("2_dq1lt")
@@ -25,10 +27,15 @@ Producer = NodePath("..")
 metadata/_custom_type_script = "uid://d2q1y3cu1t74m"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(2, 0.5)
+position = Vector2(4, 26.5)
 shape = SubResource("RectangleShape2D_gua3a")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(3, -83)
+shape = SubResource("CircleShape2D_8uxmv")
+
 [node name="Hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("Producer")]
+visible = false
 collision_layer = 8
 collision_mask = 8
 script = ExtResource("3_gua3a")
@@ -36,5 +43,18 @@ Producer = NodePath("..")
 metadata/_custom_type_script = "uid://ckwhrsmhqd7et"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
-position = Vector2(2, 0.5)
+position = Vector2(4, 26.5)
 shape = SubResource("RectangleShape2D_gua3a")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(3, -83)
+shape = SubResource("CircleShape2D_8uxmv")
+
+[node name="barHP" type="ProgressBar" parent="."]
+modulate = Color(1, 0.09411765, 1, 1)
+offset_left = -64.0
+offset_top = -130.0
+offset_right = 65.0
+offset_bottom = -117.0
+value = 50.0
+show_percentage = false

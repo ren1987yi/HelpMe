@@ -1,14 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://3ir1q0bhfaoi"]
+[gd_scene load_steps=3 format=3 uid="uid://3ir1q0bhfaoi"]
 
 [ext_resource type="PackedScene" uid="uid://5ekju1gnphp7" path="res://characters/player/playerV1.tscn" id="1_hegwl"]
 [ext_resource type="Script" uid="uid://c1q0xtg2ils3g" path="res://scenes/playgrounds/Test1.cs" id="1_xjm4u"]
-[ext_resource type="PackedScene" uid="uid://dgd4ccvwdlw7a" path="res://characters/enemy/Enemy1.tscn" id="2_trr8p"]
 
 [node name="Root" type="Node2D"]
 script = ExtResource("1_xjm4u")
 
 [node name="Player" parent="." instance=ExtResource("1_hegwl")]
 position = Vector2(528, 378)
-
-[node name="Enemy1" parent="." instance=ExtResource("2_trr8p")]
-position = Vector2(932, 378)

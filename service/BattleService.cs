@@ -22,6 +22,12 @@ public partial class BattleService : Node
    public float CalcDamage(Node attch,Node defense)
    {
         var damage = attch.Get("Damage").AsSingle();
+
+        if(attch.GetType() == defense.GetType())
+        {
+            return 0.0f;
+        }
+
         GD.Print($"CalcDamge:{attch.Name}->{defense.Name}  lost:{damage}");
         var hp = defense.Get("HP").AsSingle();
         hp -= damage;

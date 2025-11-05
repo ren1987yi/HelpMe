@@ -12,7 +12,7 @@ public partial class Welcome : Control
     {
 
         _sceneService = Application.Service.GetService<SceneService>(); 
-
+        _sceneService.Reset();
         btnStart = GetNode<Button>("btnStart");
         btnStart.Pressed += _on_button_pressed;
     }
